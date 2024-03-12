@@ -1,5 +1,5 @@
 import { Header } from "./Header/Header";
-import { Card } from "./Card";
+import { Card } from "./Card/Card";
 
 export const Layout = () => {
   return (

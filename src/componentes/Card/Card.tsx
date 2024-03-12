@@ -1,5 +1,6 @@
-import { ChakraProvider, Input, Button, Box, Center} from "@chakra-ui/react";
-import { login } from "../services/login";
+import { ChakraProvider, Input, Button, Box, Center } from "@chakra-ui/react";
+import { login } from "../../services/login";
+import "./Card.css";
 
 export const Card = () => {
   return (
@@ -15,15 +16,15 @@ export const Card = () => {
           backgroundColor={"#ffffff"}
           borderRadius={"1rem"}
           padding={"15px"}
-          marginTop={'8rem'}
+          marginTop={"8rem"}
         >
-          <Center marginBottom={"10px"} fontSize={'1.5rem'}>
+          <Center marginBottom={"10px"} fontSize={"1.5rem"}>
             <h1>Faça Login</h1>
           </Center>
           <Input placeholder="E-mail" marginBottom={"1rem"} />
           <Input placeholder="Password" marginBottom={"1rem"} />
           <center>
-            <Button onClick={login} background={"#932ed1"} color={"white"} _hover={{background:'#560987'}}>
+            <Button id="buttonLogin" onClick={login}>
               Entrar
             </Button>
           </center>
@@ -31,4 +32,4 @@ export const Card = () => {
       </Box>
     </ChakraProvider>
   );
-}
+};
