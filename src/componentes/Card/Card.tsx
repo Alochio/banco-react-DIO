@@ -1,12 +1,21 @@
 import { ChakraProvider, Input, Button, Box, Center } from "@chakra-ui/react";
 import { login } from "../../services/login";
 import "./Card.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { api } from "../../services/Api";
 
 export const Card = () => {
   const [email, setEmail] = useState("");
 
-  console.log('email digitado: ' + email)
+  console.log("email digitado: " + email);
+
+  useEffect(() => {
+    const getData = async () =>{
+      const data = await api
+      console.log(data)
+    }
+    getData()
+  })
 
   return (
     <ChakraProvider>
@@ -34,7 +43,9 @@ export const Card = () => {
           />
           <Input placeholder="Password" marginBottom={"1rem"} />
           <center>
-            <Button id="buttonLogin" onClick={() => login(email)}>Entrar</Button>
+            <Button id="buttonLogin" onClick={() => login(email)}>
+              Entrar
+            </Button>
           </center>
         </Box>
       </Box>
