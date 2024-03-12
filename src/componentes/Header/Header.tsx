@@ -1,6 +1,8 @@
+import './Header.css'
+
 export const Header = () => {
     return(
-        <div>
+        <div id='cabecalho'>
             DIO Bank
         </div>
     )

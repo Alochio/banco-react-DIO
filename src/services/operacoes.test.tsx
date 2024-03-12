@@ -15,4 +15,9 @@ describe ('soma', () => {
         const value = multiplica(2,3)
         expect(value).toBe(6)
     })
+
+    it('Deve informar um erro, com o multiplicador diferente de 2 ou 3', () =>{
+        const value = multiplica(2,3)
+        expect(value).toBe('Multiplicador não aceito')
+    })
 })

@@ -1,12 +1,11 @@
-import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { Header } from "./Header/Header";
+import { Card } from "./Card";
 
-export const Layout = ({ children }: any) => {
+export const Layout = () => {
   return (
     <>
       <Header />
-      {children}
-      <Footer />
+      <Card />
     </>
   );
 };
