@@ -42,7 +42,9 @@ export const Card = () => {
           padding={"15px"}
           marginTop={"8rem"}
         >
-          {(userData !== null && userData !== undefined) ? <h1>Informações carreegadas</h1> : <h1>Loading...</h1>}
+          {(userData !== null && userData !== undefined) ? <h1>Informações carreegadas</h1> 
+          : <Button isLoading colorScheme='blue'>Click me</Button>}
+          
           <Center marginBottom={"10px"} fontSize={"1.5rem"}>
             <h1>Faça Login</h1>
           </Center>
