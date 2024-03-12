@@ -4,18 +4,28 @@ import "./Card.css";
 import { useState, useEffect } from "react";
 import { api } from "../../services/Api";
 
+interface UserData{
+  email: string,
+  password: string,
+  name: string
+}
+
+
 export const Card = () => {
   const [email, setEmail] = useState("");
+  const [ userData, setUserData ] = useState<null | UserData>()
 
   console.log("email digitado: " + email);
 
   useEffect(() => {
     const getData = async () =>{
-      const data = await api
-      console.log(data)
+      const data: any | UserData =  await api
+      setUserData(data)
     }
     getData()
   })
+
+  console.log(userData)
 
   return (
     <ChakraProvider>
@@ -32,9 +42,11 @@ export const Card = () => {
           padding={"15px"}
           marginTop={"8rem"}
         >
+          {(userData !== null && userData !== undefined) ? <h1>Informações carreegadas</h1> : <h1>Loading...</h1>}
           <Center marginBottom={"10px"} fontSize={"1.5rem"}>
             <h1>Faça Login</h1>
           </Center>
+          <center><p>{userData?.name}</p></center>
           <Input
             placeholder="E-mail"
             marginBottom={"1rem"}
